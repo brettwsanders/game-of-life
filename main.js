@@ -6,6 +6,7 @@
     const sizeInput = document.getElementById("size");
     const table = document.querySelector(".board");
     const beginButton = document.getElementById("begin");
+    const resetButton = document.getElementById("reset");
     const boardContainer = document.querySelector(".board-container");
 
     // values
@@ -150,7 +151,16 @@
         }
     };
 
+    const resetGame = () => {
+        if (isPlaying) {
+            isPlaying = false;
+            clearInterval(intervalId);
+            beginButton.innerHTML = "Begin!"
+        }
+    };
+
     const createAndRenderBoard = () => {
+        resetGame();
         const newBoard = initBoard(+sizeInput.value)
         renderBoard(newBoard);
         board = newBoard;
@@ -159,6 +169,7 @@
     // event handlers
     sizeInput.addEventListener("change", createAndRenderBoard);
     beginButton.addEventListener("click", startOrStop);
+    resetButton.addEventListener("click", createAndRenderBoard);
 
     // init
     createAndRenderBoard();
