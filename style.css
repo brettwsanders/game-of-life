@@ -1,10 +1,19 @@
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
+    margin: 0;
     font-family: arial, sans-serif;
+    background: linear-gradient(#00004d, #1a0033) no-repeat fixed;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
     text-transform: uppercase;
+    color: #66ff66;
+    letter-spacing: 2px;
 }
 
 .settings {
@@ -17,18 +26,20 @@ h1 {
 .settings label {
     margin-right: 10px;
     text-transform: uppercase;
+    color: #66ff66;
 }
 
 .settings input {
     font-size: 20px;
     font-weight: bold;
-    color: purple;
-    border: 1px solid limegreen;
-    background: lightgrey;
+    color: rgb(234, 83, 14);
+    border: 1px solid #66ff66;
+    background: #00004d;
+    border-radius: 10px;
 }
 
 table, td {
-    border: 1px solid black;
+    border: 1px solid #66ff66;
 }
 
 table {
@@ -38,6 +49,25 @@ table {
     height: 400px;
 }
 
-td {
+td:hover {
+    background: rgb(234, 83, 14);
+}
 
+button {
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #66ff66;
+    margin-top: 20px;
+    background: transparent;
+    color: rgb(234, 83, 14);
+    text-transform: uppercase;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background: rgb(234, 83, 14);
+    color: #1a0033;
+    font-weight: bold; 
 }
