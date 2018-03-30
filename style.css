@@ -50,10 +50,14 @@ table {
 }
 
 td:hover {
+    background: rgb(234, 83, 14, 0.5);
+}
+
+td.alive {
     background: rgb(234, 83, 14);
 }
 
-button {
+button.begin {
     width: 100px;
     height: 40px;
     text-align: center;
@@ -66,8 +70,9 @@ button {
     border-radius: 10px;
 }
 
-button:hover {
+button.begin:hover {
     background: rgb(234, 83, 14);
     color: #1a0033;
     font-weight: bold; 
 }
+

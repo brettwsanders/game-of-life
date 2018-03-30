@@ -25,8 +25,18 @@
         }
     };
 
+    const toggleCell = event => {
+        const cell = event.target;
+        if (!cell.className) {
+            cell.classList.add('alive');
+        } else {
+            cell.classList.remove('alive');
+        }
+    };
+
     // event handlers
     sizeInput.addEventListener("change", () => createBoard(table, +sizeInput.value));
+    table.addEventListener("click", event => toggleCell(event));
 
     // init
     createBoard(table, size);
