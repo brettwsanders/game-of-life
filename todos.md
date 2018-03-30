@@ -1,0 +1,10 @@
+- create input field to change game speed
+- when holding down click, select fields
+- add a button to clear board
+- add warning when game is stuck
+- add a counter for number of steps
+- host game
+- add tests
+- add a readme
+- update design
+- refactor code to introduce a class

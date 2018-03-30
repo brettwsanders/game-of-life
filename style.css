@@ -57,7 +57,7 @@ td.alive {
     background: rgb(234, 83, 14);
 }
 
-button.begin {
+button#begin {
     width: 100px;
     height: 40px;
     text-align: center;
@@ -70,9 +70,8 @@ button.begin {
     border-radius: 10px;
 }
 
-button.begin:hover {
+button#begin:hover {
     background: rgb(234, 83, 14);
     color: #1a0033;
     font-weight: bold; 
 }
-
