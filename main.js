@@ -23,18 +23,22 @@
         console.log(result);
     };
 
-    const toggleCell = event => {
-        const cell = event.target;
-        if (!cell.className) {
-            cell.classList.add('alive');
+    const handleBoardClick = event => {
+        if (isPlaying) {
+            pauseGame();
         } else {
-            cell.classList.remove('alive');
+            const cell = event.target;
+            if (!cell.className) {
+                cell.classList.add('alive');
+            } else {
+                cell.classList.remove('alive');
+            }
         }
     };
 
     const renderBoard = board => {
         let newBoard = document.createElement("table");
-        newBoard.addEventListener("click", event => toggleCell(event));
+        newBoard.addEventListener("click", event => handleBoardClick(event));
         newBoard.classList.add("board");
         for (let row = 0; row < board.length; row++) {
             let newBoardRow = document.createElement("tr");
@@ -151,7 +155,7 @@
         }
     };
 
-    const resetGame = () => {
+    const pauseGame = () => {
         if (isPlaying) {
             isPlaying = false;
             clearInterval(intervalId);
@@ -160,7 +164,7 @@
     };
 
     const createAndRenderBoard = () => {
-        resetGame();
+        pauseGame();
         const newBoard = initBoard(+sizeInput.value)
         renderBoard(newBoard);
         board = newBoard;

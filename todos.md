@@ -1,7 +1,6 @@
 - create input field to change game speed
 - when holding down click, select fields
-- add a button to clear board
-- if click on board, then stop game
+- add randomize button
 - add stylized header
 - add sounds
 - add warning when game is stuck
