@@ -7,6 +7,7 @@
     const table = document.querySelector(".board");
     const beginButton = document.getElementById("begin");
     const resetButton = document.getElementById("reset");
+    const randomButton = document.getElementById("random");
     const boardContainer = document.querySelector(".board-container");
 
     // values
@@ -170,10 +171,26 @@
         board = newBoard;
     }
 
+    const randomizeBoard = () => {
+        pauseGame();
+        const randomBoard = [];
+        const size = +sizeInput.value;
+        for (let row = 0; row < size; row++) {
+            const randomRow = [];
+            for (let col = 0; col < size; col++) {
+                randomRow.push(Math.round(Math.random()));
+            }
+            randomBoard.push(randomRow);
+        }
+        renderBoard(randomBoard);
+        board = randomBoard;
+    }
+
     // event handlers
     sizeInput.addEventListener("change", createAndRenderBoard);
     beginButton.addEventListener("click", startOrStop);
     resetButton.addEventListener("click", createAndRenderBoard);
+    randomButton.addEventListener("click", randomizeBoard);
 
     // init
     createAndRenderBoard();
